@@ -17,9 +17,9 @@ spec:
       labels:
         component: "{{ printf "zk-%s" .Release.Name  | trunc 24 }}"
     spec:
-      {{- if eq .Values.AntiAffinity "hard"}}
       affinity:
         podAntiAffinity:
+      {{- if eq .Values.AntiAffinity "hard"}}
           requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchExpressions:
@@ -29,10 +29,9 @@ spec:
                     - "{{ printf "zk-%s" .Release.Name  | trunc 24 }}"
               topologyKey: "kubernetes.io/hostname"
       {{- else if eq .Values.AntiAffinity "soft"}}
-      affinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
+          preferredDuringSchedulingIgnoredDuringExecution:
              - weight: 1
-               podAntiAffinityTerm:
+               podAffinityTerm:
                  labelSelector:
                     matchExpressions:
                       - key: "component"
