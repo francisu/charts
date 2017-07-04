@@ -100,9 +100,7 @@ spec:
         - name: datadir
           mountPath: /var/lib/zookeeper
       securityContext:
-{{- if not .Values.RunAsRoot}}
-        runAsUser: 1000
-{{- end}}
+        runAsUser: {{ .Values.RunAsUser }}
         fsGroup: 1000
   volumeClaimTemplates:
   - metadata:

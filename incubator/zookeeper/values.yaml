@@ -8,8 +8,8 @@ Memory: "4Gi"
 Heap: "2G"
 Storage: "50Gi"
 #StorageClass : default
-# RunAsRoot - get around minikube permissions problem
-RunAsRoot: false
+# RunAsUser - override to 0 for minikube
+RunAsUser: 1000
 ServerPort: 2888
 LeaderElectionPort: 3888
 ClientPort: 2181
