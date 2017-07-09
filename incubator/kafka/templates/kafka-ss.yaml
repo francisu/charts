@@ -1,15 +1,3 @@
-# headless service for petset DNS
-apiVersion: v1
-kind: Service
-metadata:
-  name: "{{ printf "%s-zookeeper-%s" .Release.Name .Values.zookeeper.Name | trunc 63 }}"
-spec:
-  ports:
-  - port: 2181
-    name: client
-  selector:
-    component: "{{.Release.Name}}"
-
 # A headless service to create DNS records
 ---
 apiVersion: v1
@@ -84,7 +72,7 @@ spec:
             command:
               - bin/kafka-topics.sh
               - --zookeeper
-              - "{{ printf "%s-zookeeper-%s" .Release.Name .Values.zookeeper.Name | trunc 63 }}:2181"
+              - "{{ .Values.zookeeper.ClientService }}:2181"
               - --list
           initialDelaySeconds: 30
           timeoutSeconds: 5
@@ -94,7 +82,7 @@ spec:
             command:
               - bin/kafka-topics.sh
               - --zookeeper
-              - "{{ printf "%s-zookeeper-%s" .Release.Name .Values.zookeeper.Name | trunc 63 }}:2181"
+              - "{{ .Values.zookeeper.ClientService }}:2181"
               - --list
           initialDelaySeconds: 30
           timeoutSeconds: 5
@@ -112,7 +100,7 @@ spec:
         command:
         - sh
         - -c
-        - "./bin/kafka-server-start.sh config/server.properties --override zookeeper.connect={{ printf "%s-zookeeper-%s" .Release.Name .Values.zookeeper.Name | trunc 63 }}:2181/ --override broker.id=${HOSTNAME##*-}"
+        - "./bin/kafka-server-start.sh config/server.properties --override zookeeper.connect={{ .Values.zookeeper.ClientService }}:2181/ --override broker.id=${HOSTNAME##*-}"
         volumeMounts:
         - name: datadir
           mountPath: "{{ .Values.DataDirectory }}"

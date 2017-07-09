@@ -14,3 +14,5 @@ Component: "kafka"
 zookeeper:
   Name: "zk"
   Component: "zk"
+  # zk-csvc from the zookeeper chart
+  ClientService: "zk-csvc"
