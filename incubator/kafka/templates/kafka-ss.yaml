@@ -72,7 +72,7 @@ spec:
             command:
               - bin/kafka-topics.sh
               - --zookeeper
-              - "{{ printf "%s-%s" .Values.zookeeper.ClientService .Release.Name | trunc 63 }}:2181"
+              - "{{ printf "%sII-%s" .Values.zookeeper.ClientService .Release.Name | trunc 63 }}:2181"
               - --list
           initialDelaySeconds: 30
           timeoutSeconds: 5
