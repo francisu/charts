@@ -1,10 +1,33 @@
 apiVersion: v1
 entries:
+  kafka:
+  - apiVersion: v1
+    created: 2017-07-09T16:19:04.258329939+02:00
+    description: Apache Kafka is publish-subscribe messaging rethought as a distributed
+      commit log.
+    digest: 1fe500abdd8dd6767519e3fd4fa4acbc31feb3e7d95c4b136f27f0414e1df254
+    home: https://kafka.apache.org/
+    icon: https://kafka.apache.org/images/logo.png
+    keywords:
+    - kafka
+    - zookeeper
+    - kafka statefulset
+    maintainers:
+    - email: faraaz@rationalizeit.us
+      name: Faraaz Khan
+    name: kafka
+    sources:
+    - https://github.com/kubernetes/charts/tree/master/incubator/zookeeper
+    - https://github.com/Yolean/kubernetes-kafka
+    - https://github.com/solsson/dockerfiles/tree/master/kafka
+    urls:
+    - kafka-0.1.2.tgz
+    version: 0.1.2
   zookeeper:
-  - created: 2017-07-03T18:28:51.139956697-07:00
+  - created: 2017-07-09T16:19:04.25923574+02:00
     description: Centralized service for maintaining configuration information, naming,
       providing distributed synchronization, and providing group services.
-    digest: 7ad9c74fd49ec1585daad2c31002193485212b7c06813b0e0b4dd662cab2c281
+    digest: f7aec83ae3e4a0d58c738f9f951878f38849392f702a36059c1dbd1c2c764d84
     home: https://zookeeper.apache.org/
     icon: https://zookeeper.apache.org/images/zookeeper_small.gif
     maintainers:
@@ -17,6 +40,6 @@ entries:
     - https://github.com/apache/zookeeper
     - https://github.com/kubernetes/contrib/tree/master/statefulset/zookeeper
     urls:
-    - http://francisu.github.com/charts/zookeeper-0.3.0.tgz
+    - zookeeper-0.3.0.tgz
     version: 0.3.0
-generated: 2017-07-03T18:28:51.138439907-07:00
+generated: 2017-07-09T16:19:04.257081563+02:00
