@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   kafka:
   - apiVersion: v1
-    created: 2017-07-09T17:18:45.469075571+02:00
+    created: 2017-08-11T00:46:24.913259598-07:00
     description: Apache Kafka is publish-subscribe messaging rethought as a distributed
       commit log.
     digest: 383fddaf2805a7e795e32da781a1caacc7d3f3bd4ac96683ea67ebc9e6398d2f
@@ -23,8 +23,31 @@ entries:
     urls:
     - kafka-0.1.2.tgz
     version: 0.1.2
+  postgresql:
+  - created: 2017-08-11T00:46:24.914490412-07:00
+    description: Object-relational database management system (ORDBMS) with an emphasis
+      on extensibility and on standards-compliance.
+    digest: b18910dd134c7aaeadb01ff0ac3156675962de1623dd11a09f33961560ac1651
+    engine: gotpl
+    home: https://www.postgresql.org/
+    icon: https://www.postgresql.org/media/img/about/press/elephant.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    maintainers:
+    - name: swordbeta
+    - name: databus23
+    name: postgresql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/postgres
+    urls:
+    - postgresql-0.7.1.tgz
+    version: 0.7.1
   zookeeper:
-  - created: 2017-07-09T17:18:45.470600549+02:00
+  - created: 2017-08-11T00:46:24.915292253-07:00
     description: Centralized service for maintaining configuration information, naming,
       providing distributed synchronization, and providing group services.
     digest: f7aec83ae3e4a0d58c738f9f951878f38849392f702a36059c1dbd1c2c764d84
@@ -42,4 +65,4 @@ entries:
     urls:
     - zookeeper-0.3.0.tgz
     version: 0.3.0
-generated: 2017-07-09T17:18:45.468191925+02:00
+generated: 2017-08-11T00:46:24.911456044-07:00

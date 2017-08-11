@@ -83,6 +83,8 @@ spec:
         resources:
 {{ toYaml .Values.metrics.resources | indent 10 }}
 {{- end }}
+      imagePullSecrets:
+      - name: {{ .Values.imagePullSecrets }}
       volumes:
       - name: data
       {{- if .Values.persistence.enabled }}
