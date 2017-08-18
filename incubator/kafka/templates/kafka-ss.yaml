@@ -98,8 +98,6 @@ spec:
             cpu: "{{ .Values.Cpu }}"
             memory: "{{ .Values.Memory }}"
         command:
-        - sh
-        - -c
         - ./bin/kafka-server-start.sh
         - config/server.properties
         - --override
