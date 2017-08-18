@@ -105,7 +105,7 @@ spec:
         - --override
         - zookeeper.connect={{ printf "%s-%s" .Values.zookeeper.ClientService .Release.Name | trunc 63 }}:2181/
         - --override
-        - broker.id=${HOSTNAME##*-}"
+        - broker.id=${HOSTNAME##*-}
         - --override
         - offsets.topic.replication.factor= {{ default 3 .Values.Replicas }}
         - --override
